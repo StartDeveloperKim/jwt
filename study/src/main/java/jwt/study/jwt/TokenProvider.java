@@ -25,8 +25,8 @@ import java.util.stream.Collectors;
 public class TokenProvider implements InitializingBean {
 
     private static final String AUTHORITIES_KEY = "auth";
-    private final String secret;
-    private final long tokenValidityInMilliseconds;
+    private final String secret; // 시크릿 key
+    private final long tokenValidityInMilliseconds; // 만료시간
     private Key key;
 
     public TokenProvider(@Value("${jwt.secret}") String secret,
