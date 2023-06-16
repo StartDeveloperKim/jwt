@@ -20,4 +20,9 @@ public class UserService {
                 .password(bCryptPasswordEncoder.encode(addUSerRequest.getPassword()))
                 .build()).getId();
     }
+
+    public User findById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
+    }
 }
